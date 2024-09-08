@@ -1,0 +1,81 @@
+<%= layout("layouts/boilerplate.ejs") %>
+<body>
+       <!-- <h1>All Listings</h1> --> 
+
+<div id="filters">
+
+  <div class="filter">
+    <div><i class="fa-solid fa-fire"></i></div>
+    <p>Trending</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-building"></i></div>
+    <p>Rooms</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-mountain-sun"></i></div>
+    <p>Amazing Views</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-tractor"></i></div> 
+    <p>Farms</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-brands fa-fort-awesome"></i></div>
+    <p>Castle</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-water"></i></i></div>
+    <p>Leaks</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-person-swimming"></i></div>
+    <p>Amazing Pools</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-tents"></i></i></div> 
+    <p>Camping</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-snowflake"></i></div>
+    <p>Arctic</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+    <p>Beach</p>
+  </div>
+  <!-- <div class="filter">
+    <div><i class="fa-solid fa-dragon"></i></div>
+    <p>Wildlife</p>
+  </div> -->
+  <div class="tax-toggle">
+     <div class="form-check-reverse form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault"><b>Include Taxes</b></label>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-3 mt-3">
+        <% for(list of allListing) {%>
+  <a href="/listings/<%= list.id %>" class="anchor">
+    <div class="card col listing-card">
+        <img src="<%= list.image.url %>" class="card-img-top" alt="listing image" style="height:20rem"/>
+        <div class="card-img-overlay">Book Now</div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= list.title %></b>
+            <br>
+            <p>&#8377;<%= list.price%>/Night 
+            <i class="tax-info">&nbsp;&nbsp;+18% GST</i>
+            </p>
+        </p>
+        </div>
+    </div>
+  </a>
+     <% } %>
+    </div>
+</body>
+
