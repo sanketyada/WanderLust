@@ -8,12 +8,12 @@ cloudinary.config({
 })
 
 const storage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-      folder: 'MY_WANDERLUST',
-      allowerdFormats:["png","jpg","jpeg"],
-    },
-  });
+  cloudinary: cloudinary,
+  params: {
+    folder: 'MY_WANDERLUST',
+    allowedFormats: ["png", "jpg", "jpeg"], // Correct key
+  },
+});
    
  module.exports ={
     cloudinary,
